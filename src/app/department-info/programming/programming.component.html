@@ -1,0 +1,33 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Programming Department
+    </mat-panel-title>
+    <mat-panel-description> </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="container">
+    <app-table [rows]="programmingInfo.slice(0, 2)"></app-table>
+    <app-table
+      class="end-table"
+      [rows]="programmingInfo.slice(2, 5)"
+    ></app-table>
+    <div class="check-box">
+      <mat-checkbox [checked]="programmingInfo[5].value" disabled
+        >Renewals</mat-checkbox
+      >
+      <mat-checkbox [checked]="programmingInfo[6].value" disabled
+        >PCM</mat-checkbox
+      >
+      <mat-checkbox [checked]="programmingInfo[7].value" disabled
+        >VUIT!</mat-checkbox
+      >
+      <mat-checkbox [checked]="programmingInfo[8].value" disabled
+        >MobiTV</mat-checkbox
+      >
+      <mat-checkbox [checked]="programmingInfo[9].value" disabled
+        >WTVE</mat-checkbox
+      >
+    </div>
+  </div>
+</mat-expansion-panel>

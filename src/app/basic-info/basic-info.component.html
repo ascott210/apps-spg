@@ -1,0 +1,45 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Basic Info
+    </mat-panel-title>
+    <mat-panel-description> </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="container">
+    <div class="first-column">
+      <app-table [rows]="memberInfo$ | async"></app-table>
+      <!-- <h3>Strategic Agreements</h3>
+      <div class="check-box" *ngIf="agreements$ | async as agreements">
+        <mat-checkbox [checked]="agreements[0].value" disabled
+          >Turner</mat-checkbox
+        >
+        <mat-checkbox [checked]="agreements[1].value" disabled
+          >Zayo</mat-checkbox
+        >
+        <mat-checkbox [checked]="agreements[2].value" disabled
+          >Plume</mat-checkbox
+        >
+        <mat-checkbox [checked]="agreements[3].value" disabled
+          >Cogent</mat-checkbox
+        >
+      </div> -->
+    </div>
+    <div class="second-column">
+      <app-table [rows]="employees$ | async"></app-table>
+      <app-table [rows]="nctcStaffAssignments$ | async"
+        ><h3>NCTC Staff Assignments</h3></app-table
+      >
+    </div>
+    <div class="third-column">
+      <app-table [rows]="boardCommittee$ | async"
+        ><h3>Board and Committee</h3></app-table
+      >
+      <div *ngIf="systems$ | async as systems">
+        <app-table [rows]="systems$ | async"
+          ><h3>Systems ({{ systems?.length }} Active)</h3></app-table
+        >
+      </div>
+    </div>
+  </div>
+</mat-expansion-panel>

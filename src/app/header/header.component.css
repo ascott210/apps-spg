@@ -1,0 +1,19 @@
+.primary {
+  margin-top: 0.5rem;
+  margin-left: 0.5rem;
+  font-size: 2rem;
+}
+.secondary {
+  margin-left: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  background-color: #f4f4f4;
+  width: 100%;
+}

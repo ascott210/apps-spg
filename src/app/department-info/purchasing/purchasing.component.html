@@ -1,0 +1,14 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Purchasing Department
+    </mat-panel-title>
+    <mat-panel-description> </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="container">
+    <app-table [rows]="purchasingInfo.slice(0, 4)"></app-table>
+    <app-table [rows]="purchasingInfo.slice(4, 9)"></app-table>
+    <app-table [rows]="purchasingInfo.slice(9, 14)"></app-table>
+  </div>
+</mat-expansion-panel>

@@ -1,0 +1,114 @@
+<mat-expansion-panel class="container">
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Cases
+    </mat-panel-title>
+    <mat-panel-description> </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <!-- <table>
+    <tr *ngFor="let case of cases$ | async">
+      <td>{{ case.time }}</td>
+      <td>{{ case.contact }}</td>
+      <td>{{ case.subject }}</td>
+    </tr>
+  </table> -->
+
+  <div class="cases-container">
+    <mat-card class="table-card">
+      <mat-card-title>Open Cases</mat-card-title>
+      <table mat-table *ngIf="cases$ | async as cases" [dataSource]="cases">
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+
+        <!-- Position Column -->
+        <ng-container matColumnDef="time">
+          <th mat-header-cell *matHeaderCellDef>Time</th>
+          <td mat-cell *matCellDef="let case">{{ case.time }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="contact">
+          <th mat-header-cell *matHeaderCellDef>Contact</th>
+          <td mat-cell *matCellDef="let case">{{ case.contact }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="subject">
+          <th mat-header-cell *matHeaderCellDef>Subject</th>
+          <td mat-cell *matCellDef="let case">{{ case.subject }}</td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      </table>
+    </mat-card>
+
+    <mat-card class="form-card">
+      <mat-card-title>New Case</mat-card-title>
+      <form>
+        <mat-form-field class="example-full-width">
+          <mat-label>Subject</mat-label>
+          <input matInput />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Choose a date</mat-label>
+          <input matInput [matDatepicker]="picker" />
+          <mat-datepicker-toggle
+            matSuffix
+            [for]="picker"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Assign Department</mat-label>
+          <mat-select>
+            <mat-option
+              *ngFor="let department of departments"
+              [value]="departments"
+            >
+              {{ department }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Assign Staff</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let person of staff" [value]="person">
+              {{ person }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Priority</mat-label>
+          <mat-select>
+            <mat-option
+              *ngFor="let priority of priorities"
+              [value]="priorities"
+            >
+              {{ priority }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Status</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let status of statuses" [value]="status">
+              {{ status }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Description</mat-label>
+          <textarea matInput></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary">Save Case</button>
+      </form>
+    </mat-card>
+  </div>
+</mat-expansion-panel>

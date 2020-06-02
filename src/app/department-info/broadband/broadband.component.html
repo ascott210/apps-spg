@@ -1,0 +1,22 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Broadband Department
+    </mat-panel-title>
+    <mat-panel-description> </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="container">
+    <app-table [rows]="broadbandInfo.slice(0, 4)"></app-table>
+    <div>
+      <app-table [rows]="broadbandInfo.slice(4, 8)"
+        ><h3>IP Transit Circuits</h3></app-table
+      >
+    </div>
+    <div>
+      <app-table [rows]="broadbandInfo.slice(8, 12)"
+        ><h3>Transport Circuits</h3></app-table
+      >
+    </div>
+  </div>
+</mat-expansion-panel>

@@ -1,0 +1,32 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Marketing Department
+    </mat-panel-title>
+    <mat-panel-description> </mat-panel-description>
+  </mat-expansion-panel-header>
+
+  <div class="container">
+    <app-table [rows]="marketingInfo.slice(0, 1)"></app-table>
+    <div>
+      <app-table [rows]="marketingInfo.slice(1, 6)"
+        ><h3>Attendance</h3></app-table
+      >
+    </div>
+    <div class="check-box">
+      <h3>Strategic Agreements</h3>
+      <mat-checkbox [checked]="marketingInfo[6].value" disabled
+        >Turner</mat-checkbox
+      >
+      <mat-checkbox [checked]="marketingInfo[7].value" disabled
+        >Plume</mat-checkbox
+      >
+      <mat-checkbox [checked]="marketingInfo[8].value" disabled
+        >Zayo</mat-checkbox
+      >
+      <mat-checkbox [checked]="marketingInfo[9].value" disabled
+        >Cogent</mat-checkbox
+      >
+    </div>
+  </div>
+</mat-expansion-panel>
